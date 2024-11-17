@@ -1,0 +1,41 @@
+/* src/components/layout/Header/Header.css */
+.header {
+    background-color: var(--color-orange);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.5s ease-out;
+}
+
+.header-image {
+    width: 4rem;
+    height: auto;
+    margin-right: 2rem;
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+.header-text {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

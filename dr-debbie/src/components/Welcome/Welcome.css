@@ -1,0 +1,60 @@
+/* src/components/Welcome/Welcome.css */
+.welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+#userForm {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#userForm label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+#userForm input,
+#userForm select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-teal);
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease;
+    background-color: var(--color-white);
+    color: var(--text-color);
+}
+
+#userForm input:focus,
+#userForm select:focus {
+    outline: none;
+    border-color: var(--color-peach);
+}
+
+#startButton {
+    background-color: var(--color-peach);
+    color: var(--color-white);
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+#startButton:hover {
+    background-color: var(--color-orange);
+    transform: scale(1.05);
+}
