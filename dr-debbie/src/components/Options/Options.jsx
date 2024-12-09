@@ -2,20 +2,16 @@
 import React from 'react';
 import './Options.css';
 
-const Options = ({ setView }) => {
+const Options = ({ setView, userInfo }) => {
   return (
-    <div className="option-panel">
-      <div className="option-buttons">
-        <button 
-          id="medsButton" 
-          onClick={() => setView('medications')}
-          aria-label="Medication Tracker"
-        ></button>
-        <button 
-          id="ptButton" 
-          onClick={() => setView('therapy')}
-          aria-label="Physical Therapy"
-        ></button>
+    <div className="options-panel">
+      <div className="options-buttons">
+        <button onClick={() => setView('therapy')} className="option-button">
+          Physical Therapy
+        </button>
+        <button onClick={() => setView('medications')} className="option-button">
+          Medications
+        </button>
       </div>
     </div>
   );

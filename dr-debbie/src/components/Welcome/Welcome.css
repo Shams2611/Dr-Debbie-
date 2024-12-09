@@ -1,60 +1,81 @@
 /* src/components/Welcome/Welcome.css */
-.welcome-buttons {
+.welcome-container {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 }
 
 .welcome-logo {
     width: 200px;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #userForm {
     width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 #userForm label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--text-color);
 }
 
 #userForm input,
 #userForm select {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
     font-size: 1rem;
     border: 1px solid var(--color-teal);
-    border-radius: 0.25rem;
-    transition: border-color 0.3s ease;
+    border-radius: 0.5rem;
     background-color: var(--color-white);
-    color: var(--text-color);
 }
 
 #userForm input:focus,
 #userForm select:focus {
     outline: none;
     border-color: var(--color-peach);
+    box-shadow: 0 0 0 2px rgba(206, 91, 55, 0.1);
 }
 
 #startButton {
     background-color: var(--color-peach);
     color: var(--color-white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
     border: none;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    width: 100%;
     margin-top: 1rem;
 }
 
 #startButton:hover {
     background-color: var(--color-orange);
-    transform: scale(1.05);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 2rem;
+    }
 }
