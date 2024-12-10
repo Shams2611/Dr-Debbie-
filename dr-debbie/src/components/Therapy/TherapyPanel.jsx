@@ -7,23 +7,23 @@ const TherapyPanel = ({ setView }) => {
   const therapyTypes = [
     {
       id: 'spineTherapy',
-      image: '/assets/images/ribs.png',
+      image: '/assets/ribs.png',
       title: 'Spinal Therapy',
       link: '/video/squat'
     },
     {
       id: 'shoulderTherapy',
-      image: '/assets/images/shoulder.png',
+      image: '/assets/shoulder.png',
       title: 'Shoulder Therapy'
     },
     {
       id: 'hipTherapy',
-      image: '/assets/images/hip.png',
+      image: '/assets/hip.png',
       title: 'Hip Therapy'
     },
     {
       id: 'kneeTherapy',
-      image: '/assets/images/knee.png',
+      image: '/assets/knee.png',
       title: 'Knee Therapy'
     }
   ];

@@ -1,4 +1,3 @@
-# config.py
 import os
 
 class Config:
@@ -6,6 +5,9 @@ class Config:
     UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
 
+    # Google Gemini API Configuration
+    GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
+    
     # Exercise configurations
     EXERCISES = {
         'squat': {
@@ -36,7 +38,7 @@ class Config:
 
     # Model configurations
     MODEL_CONFIG = {
-        'pose_model_id': "person-pose-zjwnq/2",
+        'pose_model_id': "yolov8n-pose.pt",
         'cerebras_model': "llama3.1-8b",
         'model_chunk_size': 1024/(2**4)
     }

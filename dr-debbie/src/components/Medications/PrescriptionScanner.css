@@ -1,0 +1,54 @@
+.scanner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.scanner-content {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 500px;
+}
+
+.file-input {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px dashed var(--color-teal);
+    border-radius: 0.5rem;
+}
+
+.loading {
+    text-align: center;
+    color: var(--color-teal);
+    margin: 1rem 0;
+}
+
+.error {
+    color: var(--color-orange);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.close-button {
+    background-color: var(--color-peach);
+    color: var(--color-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.close-button:hover {
+    background-color: var(--color-orange);
+}

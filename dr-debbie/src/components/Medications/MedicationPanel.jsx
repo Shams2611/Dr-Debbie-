@@ -1,10 +1,11 @@
-// src/components/Medications/MedicationPanel.jsx
 import React, { useState } from 'react';
 import MedicationItem from './MedicationItem';
+import PrescriptionScanner from './PrescriptionScanner';
 import './Medications.css';
 
 const MedicationPanel = ({ setView }) => {
   const [medications, setMedications] = useState([]);
+  const [scanningMode, setScanningMode] = useState(false);
 
   const addMedication = () => {
     setMedications([...medications, {
@@ -15,6 +16,20 @@ const MedicationPanel = ({ setView }) => {
     }]);
   };
 
+  const handlePrescriptionResult = (prescriptionData) => {
+    // Add medications from prescription scan
+    const newMedications = prescriptionData.map(med => ({
+      name: med.name,
+      days: [true, true, true, true, true, true, true], // Default to every day
+      time: med.timing || 'Morning',
+      dosage: med.dosage,
+      notes: med.instructions
+    }));
+
+    setMedications([...medications, ...newMedications]);
+    setScanningMode(false);
+  };
+
   const handleSubmit = () => {
     // Handle medication submission
     console.log('Submitting medications:', medications);
@@ -23,9 +38,26 @@ const MedicationPanel = ({ setView }) => {
   return (
     <div className="meds-panel">
       <h2>Medication Tracker</h2>
-      <button id="add-medication" onClick={addMedication}>
-        Add Medication
-      </button>
+      <div className="input-methods">
+        <button id="add-medication" onClick={addMedication}>
+          Add Medication Manually
+        </button>
+        <button 
+          id="scan-prescription" 
+          onClick={() => setScanningMode(true)}
+          className="scan-button"
+        >
+          Scan Prescription
+        </button>
+      </div>
+
+      {scanningMode && (
+        <PrescriptionScanner 
+          onResult={handlePrescriptionResult}
+          onClose={() => setScanningMode(false)}
+        />
+      )}
+
       <div id="medication-list">
         {medications.map((med, index) => (
           <MedicationItem 
@@ -39,9 +71,13 @@ const MedicationPanel = ({ setView }) => {
           />
         ))}
       </div>
-      <button id="submit-log" onClick={handleSubmit}>
-        Submit Log
-      </button>
+
+      {medications.length > 0 && (
+        <button id="submit-log" onClick={handleSubmit}>
+          Submit Log
+        </button>
+      )}
+      
       <button className="back-button" onClick={() => setView('options')}>
         Back
       </button>

@@ -196,3 +196,25 @@
 .back-button:hover {
     background-color: var(--color-orange);
 }
+
+.input-methods {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.scan-button {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+}
+
+.scan-button:hover {
+    background-color: var(--color-dark-green);
+}

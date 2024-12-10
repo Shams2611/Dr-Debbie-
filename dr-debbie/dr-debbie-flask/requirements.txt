@@ -1,10 +1,7 @@
-# requirements.txt
-Flask==3.0.0
-numpy==1.25.2
-opencv-python-headless==4.8.1.78
-supervision==0.3.0
-Werkzeug==3.0.0
-python-dotenv==1.0.0
-pytest==7.4.2
-roboflow
-inference-sdkpip install --upgrade pip
+flask
+numpy
+opencv-python
+pillow
+google-generativeai
+python-dotenv
+supervision

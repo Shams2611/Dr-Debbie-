@@ -4,8 +4,6 @@ import React from 'react';
 const TherapyButton = ({ id, image, title, link, onClick }) => {
   const handleClick = (e) => {
     if (link) {
-      // Handle navigation if link exists
-      // You might want to use React Router here
       console.log('Navigating to:', link);
     }
     onClick();
